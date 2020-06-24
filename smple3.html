@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ループ</title>
+</head>
+
+<body>
+    <div id="app">
+        <p>{{now}}</p>
+        <button v-on:click="time">現在時刻</button> <!-- v-on:event -->
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        let app = new Vue({
+            el: "#app",
+            data: {
+                now: "00:00:00"
+            },
+            methods: {
+                time: function (e) {  //function(e) この引数eは、eventの「e」
+                    let date = new Date();  //new演算子でオブジェクトのインスタンスを生成
+                    //現在時刻の取得 **ここからはjavascript**
+                    this.now = date.getHours() + ":"
+                        + date.getMinutes() + ":" +
+                        date.getSeconds();
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

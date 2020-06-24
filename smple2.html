@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ループ</title>
+</head>
+
+<body>
+    <style>
+        .error {
+            color: blue;
+        }
+    </style>
+
+    <div id="app">
+        <p v-bind:class="error_class">エラー</p>
+        <!--v-bind=割り当てる-->
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        var app = new Vue({
+            el: "#app",
+            data: {
+                error_class: "error"
+            }
+        });
+    </script>
+</body>
+
+</html>
